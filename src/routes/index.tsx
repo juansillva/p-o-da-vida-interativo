@@ -1,24 +1,16 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Kiosk } from "@/components/kiosk/Kiosk";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
-  component: Index,
+  head: () => ({
+    meta: [
+      { title: "Fome de Quê? — Totem da Conferência | Move Conf '26" },
+      { name: "description", content: "Confira a programação dos 3 dias da conferência Fome de Quê? e leve uma reflexão sobre Jesus, o Pão da Vida." },
+      { property: "og:title", content: "Fome de Quê? — Move Conf '26" },
+      { property: "og:description", content: "Cardápio da conferência: programação de 29, 30 e 31 de outubro." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
+  component: Kiosk,
 });
-
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
-function Index() {
-  return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
-  );
-}
