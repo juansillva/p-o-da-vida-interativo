@@ -8,7 +8,7 @@ export function WelcomeScreen({ onEatHere, onTakeAway }: { onEatHere: () => void
       <div className="flex flex-1 flex-col items-center justify-center gap-10 px-6 py-10 text-center">
         <p className="font-heavy text-sm uppercase tracking-[0.3em] text-muted-foreground">Move Conf '26 · 29, 30 e 31 out</p>
         <BurgerMark className="bob w-36 text-primary sm:w-48" />
-        <h1 className="font-display text-[clamp(4.5rem,18vw,10rem)] uppercase leading-[0.85]">
+        <h1 className="font-display text-[clamp(4.5rem,18vw,10rem)] uppercase leading-[0.95]">
           Fome
           <br />
           de quê?

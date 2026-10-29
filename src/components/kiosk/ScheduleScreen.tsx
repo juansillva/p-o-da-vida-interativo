@@ -28,7 +28,7 @@ export function ScheduleScreen({ dayId, onBack, onHome, onSelectDay }: {
       <header className="flex items-end justify-between gap-4 border-b-4 border-foreground pb-4">
         <div className="min-w-0">
           <p className="font-heavy text-sm uppercase tracking-[0.25em] text-muted-foreground">{day.session} · {day.date}</p>
-          <h1 className="font-display text-6xl uppercase leading-none sm:text-8xl">{day.weekday}</h1>
+          <h1 className="font-display mt-2 text-6xl uppercase leading-tight sm:text-8xl">{day.weekday}</h1>
         </div>
         <span className="shrink-0 font-display text-4xl sm:text-5xl">
           {String(day.id).padStart(2, "0")}<span className="text-muted-foreground">/{total}</span>
