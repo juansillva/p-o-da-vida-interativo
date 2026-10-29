@@ -9,7 +9,7 @@ export function ScheduleScreen({ dayId, onBack, onHome, onSelectDay }: {
   onHome: () => void;
   onSelectDay: (id: number) => void;
 }) {
-  const day = conferenceDays.find((d) => d.id === dayId) ?? conferenceDays[0];
+  const day = conferenceDays.find((d) => d.id === dayId) ?? conferenceDays[0]!;
   const total = String(conferenceDays.length).padStart(2, "0");
   return (
     <div key={day.id} className="screen-in flex min-h-dvh flex-col gap-6 px-5 py-6 sm:px-8">
