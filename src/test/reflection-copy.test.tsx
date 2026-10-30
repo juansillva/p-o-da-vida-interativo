@@ -12,8 +12,10 @@ describe("Reflection screen copy", () => {
 
   it("cites the verse as João 6:35 only, with no translation named", () => {
     render(<ReflectionScreen onHome={vi.fn()} />);
-    expect(screen.getByText("João 6:35")).toBeInTheDocument();
-    expect(screen.queryByText(/almeida|ara\b/i)).not.toBeInTheDocument();
+    const reference = screen.getByText("João 6:35");
+    expect(reference).toBeInTheDocument();
+    expect(reference.textContent).toBe("João 6:35");
+    expect(screen.queryByText(/almeida|revisada|nv[ij]|nova versão/i)).not.toBeInTheDocument();
   });
 
   it("ends with the closing question and the conference name", () => {
