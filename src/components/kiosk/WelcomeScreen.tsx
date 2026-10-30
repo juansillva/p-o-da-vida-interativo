@@ -1,13 +1,18 @@
 import { BurgerMark } from "./BurgerMark";
 import { UtensilsCrossed, ShoppingBag } from "lucide-react";
+import burgerImage from "@/assets/logo_move3d.png";
 
 export function WelcomeScreen({ onEatHere, onTakeAway }: { onEatHere: () => void; onTakeAway: () => void }) {
   return (
     <div className="screen-in flex min-h-dvh flex-col">
       <div className="checker h-6 w-full shrink-0 opacity-90" />
       <div className="flex flex-1 flex-col items-center justify-center gap-10 px-6 py-10 text-center">
-        <p className="font-heavy text-sm uppercase tracking-[0.3em] text-muted-foreground">Move Conf '26 · 29, 30 e 31 out</p>
-        <BurgerMark className="bob w-36 text-primary sm:w-48" />
+        <p className="font-heavy text-sm uppercase tracking-[0.3em] text-muted-foreground">Move Conf 2026 · 29, 30 e 31 out</p>
+        <img
+  src={burgerImage}
+  alt="Logo MOVE 2026"
+  className="bob w-36 object-contain sm:w-48"
+/>
         <h1 className="font-display text-[clamp(4.5rem,18vw,10rem)] uppercase leading-[0.95]">
           Fome
           <br />

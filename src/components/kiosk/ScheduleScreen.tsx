@@ -2,6 +2,7 @@ import { ArrowLeft, Home } from "lucide-react";
 import { conferenceDays, speakers } from "@/data/schedule";
 import { KioskButton, TopBar } from "./KioskButton";
 import { BurgerMark } from "./BurgerMark";
+import burgerImage from "@/assets/logo_move3d.png";
 
 export function ScheduleScreen({ dayId, onBack, onHome, onSelectDay }: {
   dayId: number;
@@ -57,7 +58,11 @@ export function ScheduleScreen({ dayId, onBack, onHome, onSelectDay }: {
           ))}
         </div>
         <div className="flex items-center gap-3 text-sm text-muted-foreground">
-          <BurgerMark className="w-7 shrink-0 text-primary" />
+                 <img
+  src={burgerImage}
+  alt="Logo MOVE 2026"
+  className="bob w-36 object-contain sm:w-48"
+/>
           <p>Com {speakers.join(", ")}</p>
         </div>
       </div>

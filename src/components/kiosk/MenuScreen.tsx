@@ -1,9 +1,10 @@
 import { Home } from "lucide-react";
-import poster from "@/assets/poster.jpg.asset.json";
+import poster from "@/assets/poster.png";
 import { conferenceDays } from "@/data/schedule";
 import { DayCard } from "./DayCard";
 import { KioskButton, TopBar } from "./KioskButton";
 import { BurgerMark } from "./BurgerMark";
+import burgerImage from "@/assets/logo_move3d.png";
 
 export function MenuScreen({ onSelectDay, onHome }: { onSelectDay: (id: number) => void; onHome: () => void }) {
   return (
@@ -11,7 +12,11 @@ export function MenuScreen({ onSelectDay, onHome }: { onSelectDay: (id: number) 
       <TopBar
         left={
           <span className="flex items-center gap-2 font-heavy uppercase">
-            <BurgerMark className="w-9 shrink-0 text-primary" /> Cardápio
+               <img
+  src={burgerImage}
+  alt="Logo MOVE 2026"
+  className="bob w-36 object-contain sm:w-48"
+/> Cardápio
           </span>
         }
         right={
@@ -20,10 +25,16 @@ export function MenuScreen({ onSelectDay, onHome }: { onSelectDay: (id: number) 
           </KioskButton>
         }
       />
-      <div className="relative h-[28dvh] min-h-48 overflow-hidden rounded-3xl bg-secondary">
-        <img src={poster.url} alt="Preletores da conferência Fome de Quê?" className="size-full object-cover object-top" />
-        <span className="absolute left-4 top-4 rounded-full bg-accent px-3 py-1 font-heavy text-xs uppercase text-accent-foreground">Combo 3 dias</span>
-      </div>
+      <div className="relative w-full overflow-hidden rounded-3xl bg-secondary">
+  <img
+    src={poster}
+    alt="Preletores da conferência Fome de Quê?"
+    className="h-auto w-full object-contain"
+  />
+  <span className="absolute left-4 top-4 rounded-full bg-accent px-3 py-1 font-heavy text-xs uppercase text-accent-foreground">
+    Combo 3 dias
+  </span>
+</div>
       <header>
         <h1 className="font-display text-6xl uppercase leading-none sm:text-7xl">Escolha seu dia</h1>
         <p className="mt-2 text-lg font-semibold text-muted-foreground">Confira o que preparamos para você.</p>
